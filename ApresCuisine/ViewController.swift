@@ -70,8 +70,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // setupConfettiView()
-         testParse()
+        //testParse()
         
     }
     
@@ -94,15 +93,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let currentDishItem = dishArray[indexPath.row]
         cell.textLabel!.text = currentDishItem.dishName
-        cell.detailTextLabel!.text = "\(currentDishItem.rating)"       
+        cell.detailTextLabel!.text = "\(currentDishItem.rating)  + \(currentDishItem.reviewText!)  + \(currentDishItem.dateEaten!)  "
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedDish = dishArray[indexPath.row]
-        dishNameTextField.text = selectedDish!.dishName
-        ratingTextField.text = "\(selectedDish!.rating)"
+       // dishNameTextField.text = selectedDish!.dishName
+       // ratingTextField.text = "\(selectedDish!.rating)"
         
         // print("Row: \(indexPath.row) \(currentMuseumItem.museumName)")
     }
