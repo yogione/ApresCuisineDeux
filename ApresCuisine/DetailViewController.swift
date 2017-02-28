@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Social
 
 class DetailViewController: UIViewController {
     
@@ -19,7 +20,7 @@ class DetailViewController: UIViewController {
     
     //MARK: PARSE METHODS
     @IBAction func addToDo(button: UIButton){
-        let dish = DishItem(dishname: dishNameTextField.text!, rating: Int(ratingTextField.text!)!)
+        let dish = DishItem(dishname: dishNameTextField.text!, rating: Int(ratingTextField.text!)!, review: reviewTextField.text!)
         save(dish: dish)
     }
     
@@ -40,6 +41,13 @@ class DetailViewController: UIViewController {
            // self.fetchToDos()
         }
         
+    }
+    
+    @IBAction func shareOnWhatever(button: UIButton){
+        let shareString = "I love \(selectedDish?.dishName)"
+        let activityVC = UIActivityViewController(activityItems: [shareString],
+                                                  applicationActivities: nil)
+        present(activityVC, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

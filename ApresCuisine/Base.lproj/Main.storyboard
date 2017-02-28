@@ -143,6 +143,23 @@
                                     <action selector="updateToDoWithButton:" destination="4px-Ne-drk" eventType="touchUpInside" id="wYc-eB-Biu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4e-4I-kQA">
+                                <rect key="frame" x="16" y="260" width="117" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.36381126429999999" blue="0.30911935080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="r9e-61-yEh"/>
+                                </constraints>
+                                <state key="normal" title="Delete"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBy-8L-UnE">
+                                <rect key="frame" x="16" y="298" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96338934409999999" green="1" blue="0.76826753020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ShareWhatEver"/>
+                                <connections>
+                                    <action selector="shareOnWhateverWithButton:" destination="4px-Ne-drk" eventType="touchUpInside" id="kxe-0Z-ZAc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -155,12 +172,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9tu-uM-1ri" secondAttribute="trailing" constant="246" id="OJP-BX-ESt"/>
                             <constraint firstItem="LsS-er-xlr" firstAttribute="top" secondItem="x68-pW-CJY" secondAttribute="bottom" constant="16" id="Sf2-60-elg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JY3-jk-GCN" secondAttribute="trailing" constant="218" id="Txp-AD-edm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n4e-4I-kQA" secondAttribute="trailing" constant="226" id="U40-zb-NNZ"/>
                             <constraint firstItem="9tu-uM-1ri" firstAttribute="leading" secondItem="gOJ-c4-Zhu" secondAttribute="leadingMargin" id="Vac-xJ-Rdl"/>
+                            <constraint firstItem="n4e-4I-kQA" firstAttribute="top" secondItem="JY3-jk-GCN" secondAttribute="bottom" constant="8" id="gix-YI-IVd"/>
                             <constraint firstItem="x68-pW-CJY" firstAttribute="leading" secondItem="gOJ-c4-Zhu" secondAttribute="leadingMargin" id="huz-tR-Xru"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LsS-er-xlr" secondAttribute="trailing" constant="218" id="log-uE-qdi"/>
                             <constraint firstItem="JY3-jk-GCN" firstAttribute="leading" secondItem="gOJ-c4-Zhu" secondAttribute="leadingMargin" id="mEG-G4-Wrj"/>
                             <constraint firstItem="JY3-jk-GCN" firstAttribute="top" secondItem="LsS-er-xlr" secondAttribute="bottom" constant="8" id="rvY-I6-C3D"/>
                             <constraint firstItem="32j-iP-rsS" firstAttribute="top" secondItem="4yy-bE-fei" secondAttribute="bottom" id="vwJ-R1-bRp"/>
+                            <constraint firstItem="n4e-4I-kQA" firstAttribute="leading" secondItem="gOJ-c4-Zhu" secondAttribute="leadingMargin" id="yKP-1I-xBQ"/>
                         </constraints>
                     </view>
                     <connections>

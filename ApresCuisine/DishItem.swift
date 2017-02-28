@@ -17,12 +17,12 @@ class DishItem:PFObject, PFSubclassing {
         @NSManaged var reviewText    :String!
     
         
-    convenience init(dishname: String, rating: Int){
+    convenience init(dishname: String, rating: Int, review: String){
             self.init()
             self.dishName = dishname
             self.dateEaten = NSDate() as Date
             self.rating = rating
-            self.reviewText = "not bad"
+            self.reviewText = review
             
         }
         
