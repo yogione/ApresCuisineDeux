@@ -88,7 +88,6 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate,  MKMapViewDeleg
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
      var selectedDish    :DishItem?
     
     //MARK: PARSE METHODS
@@ -189,10 +188,4 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate,  MKMapViewDeleg
         }
         return nil
     }
-    
-    
-    
-   
-
-    
 }

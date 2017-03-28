@@ -9,10 +9,10 @@
 import UIKit
 
 class DishItemTableViewCell: UITableViewCell {
-    @IBOutlet var dishName     :UITextView!
-    @IBOutlet var rating      :UITextView!
-    @IBOutlet var reviewText      :UITextView!
-    @IBOutlet var dateEaten     :UILabel!
+    @IBOutlet var dishNameLabel     :UILabel!
+    @IBOutlet var ratingLabel      :UILabel!
+    @IBOutlet var reviewTextLabel      :UILabel!
+    @IBOutlet var dateEatenLabel     :UILabel!
     
-    @IBOutlet var dishImageView :UIImageView!
+   // @IBOutlet var dishImageView :UIImageView!
 }

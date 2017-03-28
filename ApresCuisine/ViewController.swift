@@ -69,10 +69,13 @@ class ViewController: UIViewController {
     //MARK: - Interactivity Methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segEditDetailView" {
         let destinationVC = segue.destination as! DetailViewController
         let indexPath = dishTableView.indexPathForSelectedRow!
         let currentDish = dishArray[indexPath.row]
         destinationVC.selectedDish = currentDish
+        dishTableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     override func viewDidLoad() {
@@ -97,10 +100,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DishItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) // as! DishItemTableViewCell
         let currentDishItem = dishArray[indexPath.row]
         cell.textLabel!.text = currentDishItem.dishName
-        cell.detailTextLabel!.text = "\(currentDishItem.rating)  + \(currentDishItem.reviewText!)  + \(currentDishItem.dateEaten!)  "
+         cell.detailTextLabel!.text = "\(currentDishItem.rating)  + \(currentDishItem.reviewText!)  + \(currentDishItem.dateEaten!)  "
+      /*  cell.dishNameLabel.text = currentDishItem.dishName
+        cell.ratingLabel.text = "\(currentDishItem.rating)"
+        cell.reviewTextLabel.text = currentDishItem.reviewText
+        cell.dateEatenLabel.text = "\(currentDishItem.dateEaten)" */
         
         return cell
     }
