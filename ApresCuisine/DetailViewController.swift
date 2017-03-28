@@ -10,9 +10,10 @@ import UIKit
 import Parse
 import Social
 import AVFoundation
+import MapKit
 
 class DetailViewController: UIViewController, CameraManagerDelegate,
-UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+UIImagePickerControllerDelegate, UINavigationControllerDelegate,  MKMapViewDelegate {
     
     @IBOutlet var dishNameTextField    :UITextField!
     @IBOutlet var ratingTextField     :UITextField!
@@ -56,14 +57,14 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: - Built-In Camera Methods
     
-    @IBAction func galleryPressed(button: UIButton) {
+   /* @IBAction func galleryPressed(button: UIButton) {
         print("Gallery")
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .savedPhotosAlbum
         present(imagePicker, animated: true, completion: nil)
         
-    }
+    } */
     
     @IBAction func builtinCameraPressed(button :UIButton) {
         print("Camera")
@@ -76,8 +77,6 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         } else {
             print("no camera")
         }
-        
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -94,7 +93,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: PARSE METHODS
     @IBAction func addToDo(button: UIButton){
-        let dish = DishItem(dishname: dishNameTextField.text!, rating: Int(ratingTextField.text!)!, review: reviewTextField.text!, imageFileName: "curry.png", lat: "0", long: "0")
+        let imageFileName = dishNameTextField.text! + ".png"
+        let dish = DishItem(dishname: dishNameTextField.text!, rating: Int(ratingTextField.text!)!, review: reviewTextField.text!, imageFileName: imageFileName, lat: "0", long: "0")
         save(dish: dish)
     }
     
@@ -105,6 +105,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         dish.dishName = dishNameTextField.text!
         dish.rating = Int(ratingTextField.text!)!
         dish.reviewText = reviewTextField.text!
+        dish.imageFileName = dishNameTextField.text! + ".png"
+        dish.lat = "0"
+        dish.long = "0"
         
         save(dish: dish)
         
@@ -114,6 +117,26 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
             print("obj saved")
            // self.fetchToDos()
         }
+    }
+    @IBOutlet var coffeeMap       :MKMapView!
+    
+    @IBAction func longPressed(gesture: UILongPressGestureRecognizer){
+        if gesture.state == .ended {
+            print("Long Press")
+            let point = gesture.location(in: coffeeMap)
+            let coord = coffeeMap.convert(point, toCoordinateFrom: coffeeMap)
+      //      let loc = Location(name: "Long Press \(coord.latitude), \(coord.longitude)",
+         //       address: "n/a", lat: coord.latitude, lon: coord.longitude )
+        //    coffeeArray.append(loc)
+            ////  annotateMapLocations()
+            
+       //     let index = coffeeArray.index(of: loc)!
+        //    coffeeMap.addAnnotation(pinFor(loc: loc, index: index))
+            let circle = MKCircle(center: coord, radius: 1000)
+            coffeeMap.add(circle, level: .aboveRoads)
+            
+        }
+        
     }
     
     @IBAction func shareOnWhatever(button: UIButton){
@@ -125,6 +148,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
 
         // Do any additional setup after loading the view.
     }
@@ -134,6 +158,41 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //mark - map view delegate methods
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKCircle {
+            let renderer = MKCircleRenderer(overlay: overlay)
+            renderer.fillColor = .green
+            renderer.alpha = 0.5
+            return renderer
+            
+        }
+        return MKOverlayRenderer()
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if !(annotation is MKUserLocation){
+            var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "Pin") as? MKPinAnnotationView
+            if pinView == nil {
+                pinView = MKPinAnnotationView(annotation:annotation, reuseIdentifier: "Pin")
+            }
+            pinView!.annotation = annotation
+            pinView!.canShowCallout = true
+            pinView!.animatesDrop = true
+            pinView!.pinTintColor = .orange
+            let pinButton = UIButton(type: .detailDisclosure)
+            pinView!.rightCalloutAccessoryView = pinButton
+            return pinView
+            
+        }
+        return nil
+    }
+    
+    
+    
+   
 
     
 }
