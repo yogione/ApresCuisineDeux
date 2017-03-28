@@ -142,8 +142,8 @@ class AVManager: NSObject, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
     override init() {
         super.init()
-        loadBoingSound()
-        loadLaughSound()
+       // loadBoingSound()
+       // loadLaughSound()
     }
 
 

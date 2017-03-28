@@ -135,6 +135,7 @@
 				TargetAttributes = {
 					16E4DF8A1E63217D00C609D2 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = T3F49YZ2FH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -352,6 +353,7 @@
 			baseConfigurationReference = 31E475F9B7271F524B815192 /* Pods-ApresCuisine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T3F49YZ2FH;
 				INFOPLIST_FILE = ApresCuisine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wcc.ApresCuisine;
@@ -365,6 +367,7 @@
 			baseConfigurationReference = 9C8BB17409839839F38C50D8 /* Pods-ApresCuisine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T3F49YZ2FH;
 				INFOPLIST_FILE = ApresCuisine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wcc.ApresCuisine;
