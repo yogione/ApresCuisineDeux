@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         }
     }
     
-   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToEdit" {
             let indexPath = dishTableView.indexPathForSelectedRow!
             let currentDish = dishArray[indexPath.row]
@@ -64,11 +64,11 @@ class ViewController: UIViewController {
             dishTableView.deselectRow(at: indexPath, animated: true)
         }
         
-    } */
+    }
     
     //MARK: - Interactivity Methods
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segEditDetailView" {
         let destinationVC = segue.destination as! DetailViewController
         let indexPath = dishTableView.indexPathForSelectedRow!
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         destinationVC.selectedDish = currentDish
         dishTableView.deselectRow(at: indexPath, animated: true)
         }
-    }
+    } */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,14 +100,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) // as! DishItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DishItemTableViewCell
         let currentDishItem = dishArray[indexPath.row]
-        cell.textLabel!.text = currentDishItem.dishName
-         cell.detailTextLabel!.text = "\(currentDishItem.rating)  + \(currentDishItem.reviewText!)  + \(currentDishItem.dateEaten!)  "
-      /*  cell.dishNameLabel.text = currentDishItem.dishName
+      //  cell.textLabel!.text = currentDishItem.dishName
+        // cell.detailTextLabel!.text = "\(currentDishItem.rating)  + \(currentDishItem.reviewText!)  + \(currentDishItem.dateEaten!)  "
+        cell.dishNameLabel.text = currentDishItem.dishName
         cell.ratingLabel.text = "\(currentDishItem.rating)"
         cell.reviewTextLabel.text = currentDishItem.reviewText
-        cell.dateEatenLabel.text = "\(currentDishItem.dateEaten)" */
+        cell.dateEatenLabel.text = "\(currentDishItem.dateEaten)"
         
         return cell
     }
@@ -136,7 +136,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 120.0
     }
     
     

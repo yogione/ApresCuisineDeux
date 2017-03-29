@@ -27,30 +27,59 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Kt9-uq-RL3" detailTextLabel="ZaQ-0K-LZb" rowHeight="140" style="IBUITableViewCellStyleSubtitle" id="6eO-MB-um2" customClass="DishItemTableViewCell" customModule="ApresCuisine" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="140" id="6eO-MB-um2" customClass="DishItemTableViewCell" customModule="ApresCuisine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6eO-MB-um2" id="1jF-7J-xR2">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kt9-uq-RL3">
-                                                    <rect key="frame" x="15" y="52" width="34" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKD-Xt-0TL" userLabel="dishNameLabel">
+                                                    <rect key="frame" x="8" y="8" width="252" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZaQ-0K-LZb">
-                                                    <rect key="frame" x="15" y="73" width="44" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L5-wo-poO" userLabel="ratingLabel">
+                                                    <rect key="frame" x="0.0" y="37" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heU-sz-Ljt" userLabel="dateEatenLabel">
+                                                    <rect key="frame" x="8" y="95" width="327" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ig9-MF-661" userLabel="reviewTextLabel">
+                                                    <rect key="frame" x="0.0" y="66" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6L5-wo-poO" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leading" id="01s-lS-Fcj"/>
+                                                <constraint firstItem="zKD-Xt-0TL" firstAttribute="top" secondItem="1jF-7J-xR2" secondAttribute="topMargin" id="B0l-RO-GBB"/>
+                                                <constraint firstItem="Ig9-MF-661" firstAttribute="top" secondItem="6L5-wo-poO" secondAttribute="bottom" constant="8" id="ITl-Dt-j9I"/>
+                                                <constraint firstItem="zKD-Xt-0TL" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leadingMargin" id="Sbb-jE-gax"/>
+                                                <constraint firstItem="heU-sz-Ljt" firstAttribute="top" secondItem="Ig9-MF-661" secondAttribute="bottom" constant="8" id="WA0-PY-c4I"/>
+                                                <constraint firstItem="heU-sz-Ljt" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leadingMargin" id="Ze1-5J-wK3"/>
+                                                <constraint firstItem="6L5-wo-poO" firstAttribute="top" secondItem="zKD-Xt-0TL" secondAttribute="bottom" constant="8" id="bsf-4g-z4m"/>
+                                                <constraint firstItem="6L5-wo-poO" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leading" id="gpL-Yw-Nh2"/>
+                                                <constraint firstAttribute="trailing" secondItem="6L5-wo-poO" secondAttribute="trailing" constant="-16" id="kQZ-aw-LBv"/>
+                                                <constraint firstItem="Ig9-MF-661" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leading" id="l2t-Ii-aVr"/>
+                                                <constraint firstItem="heU-sz-Ljt" firstAttribute="trailing" secondItem="1jF-7J-xR2" secondAttribute="trailingMargin" id="rg5-kb-9Cf"/>
+                                                <constraint firstItem="6L5-wo-poO" firstAttribute="top" secondItem="zKD-Xt-0TL" secondAttribute="bottom" constant="8.5" id="twU-hm-OWn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zKD-Xt-0TL" secondAttribute="trailing" constant="75" id="xb2-Jt-edk"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateEatenLabel" destination="heU-sz-Ljt" id="J29-gE-xsK"/>
+                                            <outlet property="dishNameLabel" destination="zKD-Xt-0TL" id="eW6-7T-wW0"/>
+                                            <outlet property="ratingLabel" destination="6L5-wo-poO" id="rpB-oa-Rxr"/>
+                                            <outlet property="reviewTextLabel" destination="Ig9-MF-661" id="NxU-hL-x98"/>
                                             <segue destination="4px-Ne-drk" kind="show" identifier="segueToEdit" id="s7o-hq-ceT"/>
                                         </connections>
                                     </tableViewCell>
