@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         }
     }
     
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToEdit" {
             let indexPath = dishTableView.indexPathForSelectedRow!
             let currentDish = dishArray[indexPath.row]
@@ -64,11 +64,11 @@ class ViewController: UIViewController {
             dishTableView.deselectRow(at: indexPath, animated: true)
         }
         
-    }
+    }*/
     
     //MARK: - Interactivity Methods
     
-  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segEditDetailView" {
         let destinationVC = segue.destination as! DetailViewController
         let indexPath = dishTableView.indexPathForSelectedRow!
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         destinationVC.selectedDish = currentDish
         dishTableView.deselectRow(at: indexPath, animated: true)
         }
-    } */
+    } 
     
     override func viewDidLoad() {
         super.viewDidLoad()
