@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func fetchToDosPressed(button: UIButton){
+    @IBAction func fetchToDosPressed(button: UIBarButtonItem){
         
         fetchToDos()
     }

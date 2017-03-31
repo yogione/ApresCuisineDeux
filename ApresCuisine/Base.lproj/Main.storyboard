@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,45 +35,52 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKD-Xt-0TL" userLabel="dishNameLabel">
-                                                    <rect key="frame" x="8" y="8" width="252" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dishNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKD-Xt-0TL" userLabel="dishNameLabel">
+                                                    <rect key="frame" x="0.0" y="8" width="157" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="157" id="Dbr-rb-s64"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L5-wo-poO" userLabel="ratingLabel">
-                                                    <rect key="frame" x="0.0" y="37" width="359" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ratingLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L5-wo-poO" userLabel="ratingLabel">
+                                                    <rect key="frame" x="0.0" y="37" width="117" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="117" id="TwO-fI-803"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heU-sz-Ljt" userLabel="dateEatenLabel">
-                                                    <rect key="frame" x="8" y="95" width="327" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reviewTextLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ig9-MF-661" userLabel="reviewTextLabel">
+                                                    <rect key="frame" x="0.0" y="66" width="285" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="285" id="5nB-ty-57V"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ig9-MF-661" userLabel="reviewTextLabel">
-                                                    <rect key="frame" x="0.0" y="66" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateEatenLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heU-sz-Ljt" userLabel="dateEatenLabel">
+                                                    <rect key="frame" x="0.0" y="95" width="260" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="260" id="f2x-Er-zYv"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6L5-wo-poO" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leading" id="01s-lS-Fcj"/>
-                                                <constraint firstItem="zKD-Xt-0TL" firstAttribute="top" secondItem="1jF-7J-xR2" secondAttribute="topMargin" id="B0l-RO-GBB"/>
-                                                <constraint firstItem="Ig9-MF-661" firstAttribute="top" secondItem="6L5-wo-poO" secondAttribute="bottom" constant="8" id="ITl-Dt-j9I"/>
-                                                <constraint firstItem="zKD-Xt-0TL" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leadingMargin" id="Sbb-jE-gax"/>
-                                                <constraint firstItem="heU-sz-Ljt" firstAttribute="top" secondItem="Ig9-MF-661" secondAttribute="bottom" constant="8" id="WA0-PY-c4I"/>
-                                                <constraint firstItem="heU-sz-Ljt" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leadingMargin" id="Ze1-5J-wK3"/>
-                                                <constraint firstItem="6L5-wo-poO" firstAttribute="top" secondItem="zKD-Xt-0TL" secondAttribute="bottom" constant="8" id="bsf-4g-z4m"/>
-                                                <constraint firstItem="6L5-wo-poO" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leading" id="gpL-Yw-Nh2"/>
-                                                <constraint firstAttribute="trailing" secondItem="6L5-wo-poO" secondAttribute="trailing" constant="-16" id="kQZ-aw-LBv"/>
-                                                <constraint firstItem="Ig9-MF-661" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leading" id="l2t-Ii-aVr"/>
-                                                <constraint firstItem="heU-sz-Ljt" firstAttribute="trailing" secondItem="1jF-7J-xR2" secondAttribute="trailingMargin" id="rg5-kb-9Cf"/>
-                                                <constraint firstItem="6L5-wo-poO" firstAttribute="top" secondItem="zKD-Xt-0TL" secondAttribute="bottom" constant="8.5" id="twU-hm-OWn"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zKD-Xt-0TL" secondAttribute="trailing" constant="75" id="xb2-Jt-edk"/>
+                                                <constraint firstItem="heU-sz-Ljt" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leading" id="9Lu-Cw-VzZ"/>
+                                                <constraint firstItem="zKD-Xt-0TL" firstAttribute="top" secondItem="1jF-7J-xR2" secondAttribute="top" constant="8" id="AJ2-oL-gKm"/>
+                                                <constraint firstItem="heU-sz-Ljt" firstAttribute="top" secondItem="Ig9-MF-661" secondAttribute="bottom" constant="8" symbolic="YES" id="Wxi-br-eUk"/>
+                                                <constraint firstItem="6L5-wo-poO" firstAttribute="top" secondItem="zKD-Xt-0TL" secondAttribute="bottom" constant="8" symbolic="YES" id="pGz-GI-8gz"/>
+                                                <constraint firstItem="Ig9-MF-661" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leading" id="pXy-X0-k5k"/>
+                                                <constraint firstItem="6L5-wo-poO" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leading" id="sft-vE-ZFI"/>
+                                                <constraint firstItem="zKD-Xt-0TL" firstAttribute="leading" secondItem="1jF-7J-xR2" secondAttribute="leading" id="uBw-9k-deB"/>
+                                                <constraint firstItem="Ig9-MF-661" firstAttribute="top" secondItem="6L5-wo-poO" secondAttribute="bottom" constant="8" symbolic="YES" id="uGj-8c-kxI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -89,29 +97,30 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="6WI-iP-NOl"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeh-En-NZG">
-                                <rect key="frame" x="324" y="72" width="35" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Fetch"/>
-                                <connections>
-                                    <action selector="fetchToDosPressedWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cjq-Ft-JkX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="jeh-En-NZG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aTo-Op-5sJ"/>
-                            <constraint firstItem="jeh-En-NZG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xMU-wi-Igm"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yRe-ur-gdf"/>
+                    <navigationItem key="navigationItem" id="yRe-ur-gdf">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="evc-tk-U4k">
+                                <connections>
+                                    <segue destination="4px-Ne-drk" kind="showDetail" identifier="segueToAddNewDish" id="Aqb-xa-6YX"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="fetch" id="Qsm-4a-Dgx" userLabel="fetch">
+                                <connections>
+                                    <action selector="fetchToDosPressedWithButton:" destination="BYZ-38-t0r" id="mB2-69-wzH"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="dishTableView" destination="yAF-Nt-sdJ" id="Dp4-7x-LuU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037.5999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1077.5999999999999" y="109.29535232383809"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="d5u-CW-fFr">
@@ -286,4 +295,7 @@
             <point key="canvasLocation" x="343" y="124"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="s7o-hq-ceT"/>
+    </inferredMetricsTieBreakers>
 </document>
