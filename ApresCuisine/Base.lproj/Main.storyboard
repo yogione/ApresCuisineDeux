@@ -88,7 +88,7 @@
                                             <outlet property="dishNameLabel" destination="zKD-Xt-0TL" id="eW6-7T-wW0"/>
                                             <outlet property="ratingLabel" destination="6L5-wo-poO" id="rpB-oa-Rxr"/>
                                             <outlet property="reviewTextLabel" destination="Ig9-MF-661" id="NxU-hL-x98"/>
-                                            <segue destination="4px-Ne-drk" kind="show" identifier="segueToEdit" id="s7o-hq-ceT"/>
+                                            <segue destination="4px-Ne-drk" kind="show" identifier="segueToEdit" id="zAG-Ph-FB2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -104,7 +104,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="evc-tk-U4k">
                                 <connections>
-                                    <segue destination="4px-Ne-drk" kind="showDetail" identifier="segueToAddNewDish" id="Aqb-xa-6YX"/>
+                                    <segue destination="4px-Ne-drk" kind="show" id="mcO-xf-Uob"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="fetch" id="Qsm-4a-Dgx" userLabel="fetch">
@@ -296,6 +296,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="s7o-hq-ceT"/>
+        <segue reference="zAG-Ph-FB2"/>
     </inferredMetricsTieBreakers>
 </document>

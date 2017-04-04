@@ -69,7 +69,7 @@ class ViewController: UIViewController {
     //MARK: - Interactivity Methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segEditDetailView" {
+        if segue.identifier == "segueToEdit" {
         let destinationVC = segue.destination as! DetailViewController
         let indexPath = dishTableView.indexPathForSelectedRow!
         let currentDish = dishArray[indexPath.row]
@@ -107,7 +107,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dishNameLabel.text = currentDishItem.dishName
         cell.ratingLabel.text = "\(currentDishItem.rating)"
         cell.reviewTextLabel.text = currentDishItem.reviewText
-        cell.dateEatenLabel.text = "\(currentDishItem.dateEaten)"
+        cell.dateEatenLabel.text = "\(currentDishItem.dateEaten!)"
         
         return cell
     }
