@@ -47,7 +47,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate,  MKMapViewDeleg
     
     @IBAction func savePressed(button: UIButton) {
         if let image = capturedImage.image {
-            cameraMgr.save2(image: image, filename: "curry.png")
+            cameraMgr.save(image: image)
         } else {
             print("no image")
         }

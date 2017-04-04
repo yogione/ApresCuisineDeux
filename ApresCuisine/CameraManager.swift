@@ -151,9 +151,9 @@ class CameraManager: NSObject, AVCapturePhotoCaptureDelegate{
         try? fileMgr.removeItem(at: localFileURL)
     }
     
-   // public func save(image: UIImage) {
-   //     save(image: image, filename: getNewImageFilename())
-    // }
+    public func save(image: UIImage) {
+        save(image: image, filename: getNewImageFilename())
+     }
 
     public func save2(image: UIImage, filename: String) {
     save(image: image, filename: filename)

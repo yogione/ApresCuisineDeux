@@ -70,9 +70,9 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToEdit" {
-        let destinationVC = segue.destination as! DetailViewController
         let indexPath = dishTableView.indexPathForSelectedRow!
         let currentDish = dishArray[indexPath.row]
+        let destinationVC = segue.destination as! DetailViewController
         destinationVC.selectedDish = currentDish
         dishTableView.deselectRow(at: indexPath, animated: true)
         }
@@ -102,8 +102,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DishItemTableViewCell
         let currentDishItem = dishArray[indexPath.row]
-      //  cell.textLabel!.text = currentDishItem.dishName
-        // cell.detailTextLabel!.text = "\(currentDishItem.rating)  + \(currentDishItem.reviewText!)  + \(currentDishItem.dateEaten!)  "
         cell.dishNameLabel.text = currentDishItem.dishName
         cell.ratingLabel.text = "\(currentDishItem.rating)"
         cell.reviewTextLabel.text = currentDishItem.reviewText
@@ -112,17 +110,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    /* func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-   // func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     //   selectedDish = dishArray[indexPath.row]
-       // dishNameTextField.text = selectedDish!.dishName
-       // ratingTextField.text = "\(selectedDish!.rating)"
+       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedDish = dishArray[indexPath.row]
+        dishNameTextField.text = selectedDish!.dishName
+        ratingTextField.text = "\(selectedDish!.rating)"
         
-        // print("Row: \(indexPath.row) \(currentMuseumItem.museumName)")
-  //  }
+        print("Row: \(indexPath.row) \(currentMuseumItem.museumName)")
+    } */
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -138,6 +136,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120.0
     }
-    
     
 }
